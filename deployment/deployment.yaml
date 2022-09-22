@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cute-pics-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cute-pics-api
+  template:
+    metadata:
+      labels:
+        app: cute-pics-api
+      annotations:
+        instrumentation.opentelemetry.io/inject-sdk: "true"
+    spec:
+      containers:
+        - name: cute-pics-api
+          image: ghcr.io/dcnick3/cute-pics-api
