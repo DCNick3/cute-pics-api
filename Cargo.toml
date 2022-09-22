@@ -9,5 +9,6 @@ debug = 0
 lto = 'thin'
 
 [dependencies]
+actix-cors = "0.6.3"
 actix-web = "4.2.1"
 rand = "0.8.5"

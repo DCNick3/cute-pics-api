@@ -1,3 +1,4 @@
+use actix_cors::Cors;
 use actix_web::Result;
 use actix_web::{get, App, HttpResponse, HttpServer};
 use rand::prelude::*;
@@ -27,7 +28,7 @@ async fn main() -> io::Result<()> {
 
     println!("Listening on http://{}/", addr);
 
-    HttpServer::new(|| App::new().service(get_pic))
+    HttpServer::new(|| App::new().wrap(Cors::permissive()).service(get_pic))
         .bind(addr)?
         .run()
         .await
