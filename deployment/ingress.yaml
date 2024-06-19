@@ -19,5 +19,4 @@ spec:
                   number: 80
   tls:
     - hosts:
-      - cute-pics-api.dcnick3.me
-      secretName: cute-pics-api-ingress-secret
+        - cute-pics-api.dcnick3.me
